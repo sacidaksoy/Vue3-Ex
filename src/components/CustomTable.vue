@@ -5,9 +5,25 @@ table.table.table-borderless
       th(v-for="header in headers" :key="header") {{ header.charAt(0).toUpperCase() + header.slice(1) }}
   tbody
     tr(v-for="item in items" :key="item.id")
-      td(v-for="header in headers" :key="`${item.id}_${header}`" :class="{ 'align-center': header === 'userId' || header === 'id' }")
-        | {{ item[header.toLowerCase()] || item['userId'] }}
+      td(v-for="header in headers" :key="`${item.id}_${header}`") 
+        | {{ item[header.toLowerCase()] || item['userId']}}
 </template>
+
+<script>
+export default {
+  name: "CustomTable",
+  props: {
+    headers: {
+      type: Array,
+      required: true,
+    },
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+};
+</script>
 
 <style scoped>
 .table {
@@ -19,13 +35,9 @@ table.table.table-borderless
   background-color: white;
 }
 
-.table tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-.table td {
-  text-align: start;
-  min-width: 100px;
+.table td,
+.table th {
+  min-width: 100px; /* istediğiniz genişlik değeri */
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -33,15 +45,8 @@ table.table.table-borderless
 .table th {
   background-color: #f5f5f5;
   white-space: nowrap;
+  /* text-align: left; */
   font-weight: bold;
   color: #333;
-  min-width: 100px;
-  padding: 10px;
-  border-bottom: 1px solid #e1e1e1;
-}
-
-/* We just want to align the 'userId' and 'id' columns. */
-.table td.align-center {
-  text-align: center;
 }
 </style>
