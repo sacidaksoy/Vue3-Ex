@@ -62,3 +62,67 @@ export default {
   },
 };
 </script>
+
+<style>
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.table td,
+.table th {
+  padding: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  white-space: nowrap;
+  /* text-align: left; */
+  font-weight: bold;
+  color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-item {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  background-color: #ddd;
+}
+
+.page-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.page-link.disabled {
+  color: #999;
+  pointer-events: none;
+  background-color: #f5f5f5;
+}
+
+.page-link.active {
+  color: white;
+  background-color: #333;
+}
+</style>
