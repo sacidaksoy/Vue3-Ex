@@ -37,7 +37,7 @@ export default {
 
 .table td,
 .table th {
-  min-width: 100px; /* istediğiniz genişlik değeri */
+  min-width: 100px;
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -48,5 +48,23 @@ export default {
   /* text-align: left; */
   font-weight: bold;
   color: #333;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+  .table td,
+  .table th {
+    min-width: unset;
+  }
+  .table td,
+  .table th {
+    padding: 5px;
+  }
+  .table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
 }
 </style>

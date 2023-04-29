@@ -81,4 +81,19 @@ export default {
   color: white;
   background-color: #333;
 }
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .page-item {
+    margin: 5px;
+  }
+
+  .page-link {
+    padding: 5px 10px;
+  }
+}
 </style>
