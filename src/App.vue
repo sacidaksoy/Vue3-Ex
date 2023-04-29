@@ -1,17 +1,17 @@
 <template lang="pug">
 .container
-  PostsTable(:posts="store.posts")
+  Posts(:posts="store.posts")
 </template>
 
 <script>
 import { defineComponent } from "vue";
 import { useStore } from "./store";
-import PostsTable from './components/PostsTable.vue'
+import Posts from "./pages/Posts.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    PostsTable,
+    Posts,
   },
   setup() {
     const store = useStore();
