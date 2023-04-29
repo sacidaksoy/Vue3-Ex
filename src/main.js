@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { createPinia } from "pinia";
 import "bootstrap/dist/css/bootstrap.css";
+import './assets/reset.css';
+import './assets/styles.css';
 
 const app = createApp(App);
 const pinia = createPinia();
