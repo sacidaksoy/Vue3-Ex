@@ -55,8 +55,8 @@ export default {
 
 .page-link {
   padding: 10px 15px;
-  color: #333;
-  background-color: #f5f5f5;
+  /* color: #333; */
+  /* background-color: #f5f5f5; */
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
