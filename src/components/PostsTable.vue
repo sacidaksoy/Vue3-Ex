@@ -47,17 +47,32 @@ export default {
   },
   computed: {
     displayedPosts() {
-      const start = (this.pagination.currentPage - 1) * this.pagination.pageSize;
+      const start =
+        (this.pagination.currentPage - 1) * this.pagination.pageSize;
       const end = start + this.pagination.pageSize;
       return this.posts.slice(start, end);
     },
     pages() {
-      const pageCount = Math.ceil(this.pagination.totalItems / this.pagination.pageSize);
-      const pages = [];
+      const pageCount = Math.ceil(
+        this.pagination.totalItems / this.pagination.pageSize
+      );
+      let pages = [];
       for (let i = 1; i <= pageCount; i++) {
         pages.push(i);
       }
       return pages;
+    },
+  },
+  watch: {
+    posts() {
+      this.pagination.totalItems = this.posts.length;
+      this.pagination.currentPage = 1;
+    },
+    "pagination.currentPage": function () {
+      const start =
+        (this.pagination.currentPage - 1) * this.pagination.pageSize;
+      const end = start + this.pagination.pageSize;
+      this.pagination.items = this.posts.slice(start, end);
     },
   },
 };
