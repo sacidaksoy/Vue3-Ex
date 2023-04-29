@@ -1,17 +1,24 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template lang="pug">
+.container
+  PostsTable(:posts="store.posts")
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent } from "vue";
+import { useStore } from "./store";
+import PostsTable from './components/PostsTable.vue'
 
-export default {
-  name: 'App',
+export default defineComponent({
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    PostsTable,
+  },
+  setup() {
+    const store = useStore();
+    store.getPosts();
+    return { store };
+  },
+});
 </script>
 
 <style>
