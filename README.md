@@ -1,6 +1,6 @@
 # my-project
 ## Bonus Question Anwer
-const newData = data.filter((item, index) => index !== 1).map((item) => item.username);
+const newData = data.filter((item, index) => index !== 2).map((item) => item.username);
 ## Project setup
 ```
 npm install
